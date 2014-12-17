@@ -29,16 +29,18 @@ def edit(names):
     num_edit = int(input("Please enter number of name you want to edit:"))
     num_edit = num_edit - 1
     (names[num_edit])= input("Please enter a new name:")
-    #Prints it out with new name replaced in the right place: 
-    count = 0
-    for each in names:
-        count = count +1
-        print("{0}.{1}".format(count,each))
+
+#New function:
+def end():
+    ends = input("Please enter False to end the program or True for continue")
+    return ends
         
 #Main program - Editing a list of names:
-def list_of_names():
-    names = get_data()
+names = get_data()
+#Rogue value loop:
+ends = False
+while ends == False:
     display(names)
     names = edit(names)
-list_of_names()
+    ends = end()
 

@@ -33,7 +33,10 @@ def edit(names):
 #New function:
 def end():
     ends = input("Please enter False to end the program or True for continue")
-    return ends
+    if ends == False:
+        return False
+    else:
+        return True
         
 #Main program - Editing a list of names:
 names = get_data()

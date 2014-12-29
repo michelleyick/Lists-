@@ -1,5 +1,8 @@
-#ask for a name then replaces it 
-#askes for the name
+#Michelle Yick
+#15-12-2014
+#Lists R&R. Task 5. Improving the code form taks 1.
+
+#Program asks for 8 names then edits the ones that the user want to change
 
 #Input the names:
 def get_names():
@@ -16,7 +19,7 @@ def get_names():
 #prints it out
 def display(names):
     #prints it out
-    count = 0
+    count=0
     print()
     
     for each in names:
@@ -26,7 +29,7 @@ def display(names):
     print()
     
 #how to edit
-def edit (names):
+def edit(names):
     ends=False
     valid=False
     

@@ -1,6 +1,6 @@
 #Michelle Yick
 #15-12-2014
-#Lists R&R. Task 5. Improving the code form taks 1.
+#Lists R&R. Task 5. Improving the code form taks 1:
 
 #Program asks for 8 names then edits the ones that the user want to change
 
@@ -8,27 +8,24 @@
 def get_names():
     names=[]
     count=0
-    
     while count!=8:
         name=input("Please enter a name for person {0}: ".format(count+1))
         names.append(name)
         count=count+1
-        
     return names
 
-#prints it out
+#prints the names out:
 def display(names):
-    #prints it out
     count=0
     print()
     
     for each in names:
-        count = count+1
+        count=count+1
         print("{0}.{1}".format(count,each))
         
-    print()
+    #print()
     
-#how to edit
+#edit the names:
 def edit(names):
     ends=False
     valid=False
@@ -39,7 +36,6 @@ def edit(names):
             valid=True
             if value>len(names):
                 ValueError
-            
         except ValueError:
             print("Not valid")
             
@@ -47,19 +43,16 @@ def edit(names):
         ends=True
     else:
         names[value]=input("Please enter a new name: ")
-        
     return ends,names
     
 
-#main program
+#main program:
 def main():
     names=get_names()
     ends=False
-    
     while not ends:
         display(names)
         ends,names = edit(names)
 
-        
 if __name__=="__main__":
     main()

@@ -2,25 +2,35 @@
 #29-12-2014
 #Lists class exercises.  Revision Q2.
 
-#Ask for the 6 names nad put it in a list:
-def names():
+#ask for the 6 names and put it in a list:
+def get_names():
     names=[]
-    for count in range(6):
-        name=input("Enter a name")
+    count=0
+    while count!=6:
+        name=input("Please enter a name for person {0}:".format(count+1))
         names.append(name)
+        count=count+1
+    return names
+
+#prints the names out:
+def display(names):
     count=0
     for each in names:
         count=count+1
         print("{0}.{1}".format(count,each))
-    return names
 
-#Slicing the list and displaying the sliced part:
-def names_slicing(names):
-    name_wanted=int(input("The number of the name you want"))
-    print(names="[{0}]".format(name_wanted))
+#slicing the list:
+def names_section(names):
+    names_slice_lower=int(input("The lower bound of the range that you wish to extract:"))
+    names_slice_upper=int(input("The upper bound of the range that you wish to extract:"))
+    total=names[names_slice_lower-1:names_slice_upper]
+    print(total)
 
-#Main program:
-def list_of_names():
-    names()
-    names_slicing(names)
-list_of_names()
+#main program
+def main_program():
+    names=get_names()
+    total=names_section(names)
+    display(names)
+main_program()
+    
+    

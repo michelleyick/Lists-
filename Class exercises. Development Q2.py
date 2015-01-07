@@ -28,21 +28,20 @@ def ask_user(country,capital):
 
     answer=input("What is the capital {0}: ".format(country))
     if answer==capital:
-        print("Well Done. You guessed correctly. The capital city of {0} is {1}".format(country,capital))
+        print("correct")
     else:
         print("That is an incorrect guess")
 
 #Main program:
 count=0
-while count!=5:
+for count in range(5):
     count=count+1
-    answer=count
-print("You got {0} guesses right out of the 5 times".format(answer))
+    print("You got {0} guesses right out of the 5 times".format(count))
 
-random_num=random()
-column1=list1()
-column2=list2()
-country=cut_list1(column1,random_num)
-capital=cut_list2(column2,random_num)
-ask_user(country,capital)
+    random_num=random()
+    column1=list1()
+    column2=list2()
+    country=cut_list1(column1,random_num)
+    capital=cut_list2(column2,random_num)
+    ask_user(country,capital)
 

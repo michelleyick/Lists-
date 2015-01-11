@@ -7,38 +7,28 @@ def random():
     import random 
     random_num=random.randint(0,10)
     return random_num
-#Lists(capitals and the countries):
-def list1():
-    column1=["England","Taiwan","Germany","France","Japan","China","United States of America","Spain","Mexico","South Korea"]
-    return column1
-def list2():
-    column2=["London","Taipei","Berlin","Paris","Tokyo","Beijing","Washington","Madrid","Mexico City","Seoul"]
-    return column2
 
-#Cut the list: (List of lists):
-def cut_list1(column1,random_num):
-    country=column1[random_num]
-    return country
-#Cut the list to get the capital: (slicing+list of lists):
-def cut_list2 (column2,random_num):
-    capital=column2[random_num]
-    return capital
+def countries_and_capitals(random_num):
+    #Lists(capitals and the countries:
+    country=["England","Taiwan","Germany","France","Japan","China","United States of America","Spain","Mexico","South Korea"]
+    capital=["London","Taipei","Berlin","Paris","Tokyo","Beijing","Washington","Madrid","Mexico City","Seoul"]
+    #Put countries/capitals in another list together:
+    capitalsAndCountries=[country,capital]
+    capitalsAndCountries[random_num][random_num]
+    return capitalAndCountries
+
 def ask_user(country,capital):
-    
-
-    answer=input("What is the capital city of {0}: ".format(country))
-    if answer==capital:
-        print("Well Done. You guessed correctly. The capital city of {0} is {1}".format(country,capital))
+    #Ask for the capital guess:
+    capitalGuess=input("What is the capital city of {0}".format(country))
+    if capitalGuess==capital[random_num]:
+        print("Well done. Your guess was correct")
     else:
-        print("That is an incorrect guess")
+        print("Incorrect guess")
 
-#Main program:
 def main():
+    #Main program:
     random_num=random()
-    print (random_num)
-    column1=list1()
-    column2=list2()
-    country=cut_list1(column1,random_num)
-    capital=cut_list2(column2,random_num)
+    country,capital,capitalAndCountries=countries_and_capitals(random_num)
     ask_user(country,capital)
 main()
+

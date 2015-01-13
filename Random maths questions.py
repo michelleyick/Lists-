@@ -38,9 +38,10 @@ def input_numbers(number1,number2,operation):
 #Main program:
 def main():
     count=0
-    correctAnswer=0
+    #correctAnswer=input_numbers(number1,number2,operation)
     for count in range(10):
         number1,number2,operation=importRandomNumbersAndOperations()
+        correctAnswer=input_numbers(number1,number2,operation)
         calc=execute_calculation(number1,number2,operation)
         answer=input_numbers(number1,number2,operation)
     print("You got {0} out of 10 correct".format(correctAnswer))
